@@ -4,6 +4,7 @@ from flask_mail import Mail, Message
 import os
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 Bootstrap5(app)
 
 mail = Mail(app)
